@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine P2P</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Cine P2P</h1>
+        <p>Compartilhamento de tela e áudio em tempo real</p>
+    </header>
+
+    <main class="container">
+        <!-- Seção de quem transmite (Host) -->
+        <section class="card">
+            <h2>Transmissor (Você)</h2>
+            <p>Seu Código de Conexão:</p>
+            <div class="code-box">
+                <span id="my-id">Gerando código...</span>
+            </div>
+            <button id="start-share" class="btn-primary">1. Compartilhar Tela e Áudio</button>
+            <p class="hint">Lembre-se de marcar "Compartilhar áudio da guia" na janela do navegador.</p>
+        </section>
+
+        <!-- Seção de quem assiste (Espectador) -->
+        <section class="card">
+            <h2>Espectador (Sua Esposa)</h2>
+            <p>Insira o código do transmissor:</p>
+            <input type="text" id="host-id-input" placeholder="Cole o código aqui...">
+            <button id="connect-btn" class="btn-secondary">2. Conectar e Assistir</button>
+        </section>
+
+        <!-- Player de Vídeo -->
+        <section class="video-container">
+            <!-- autoplay e playsinline são cruciais para o Safari -->
+            <video id="video-player" autoplay playsinline controls></video>
+        </section>
+    </main>
+
+    <!-- Importando o PeerJS -->
+    <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
